@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --header-color: #1f1f1f;
+  --button-bg: #007BFF;
+  --button-text: #ffffff;
+  --input-bg: #2c2c2c;
+  --border-color: #444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Montserrat', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header {
+  background-color: var(--header-color);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  flex: 1;
+  font-size: 1.8em;
+  animation: fadeInDown 1s ease;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+nav a i {
+  margin-right: 5px;
+}
+
+nav a:hover {
+  color: var(--button-bg);
+  transform: scale(1.05);
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+main {
+  padding: 20px;
+  margin: 20px;
+  background-color: var(--header-color);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 1s ease;
+}
+
+main h2, main h3 {
+  margin-top: 0;
+}
+
+main ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+main ul li {
+  margin-bottom: 10px;
+}
+
+main ul li i {
+  margin-right: 8px;
+  color: var(--button-bg);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: inherit;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--button-bg);
+}
+
+/* Modo claro */
+.light-mode {
+  --bg-color: #f2f2f2;
+  --text-color: #000000;
+  --header-color: #ffffff;
+  --input-bg: #e8e8e8;
+  --button-bg: #007BFF;
+  --button-text: #ffffff;
+  --border-color: #ccc;
+}
+
+.light-mode nav a {
+  color: var(--text-color);
+}
+
+.light-mode main {
+  background-color: #ffffff;
+}
+
+.light-mode form input,
+.light-mode form textarea {
+  border-color: var(--border-color);
+}
+
+/* Responsividade para celular */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+    font-size: 1.1em;
+  }
+
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Estilo da foto */
+.perfil {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+  border: 4px solid var(--button-bg); /* Borda azul */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Sombra suave */
+  opacity: 0;
+  transform: scale(0.95);
+  animation: aparecer 1s forwards;
+}
+
+/* Animações */
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

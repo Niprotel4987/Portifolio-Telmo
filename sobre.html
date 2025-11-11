@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre Mim</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-user"></i> Sobre Mim</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="curriculo.html">Currículo</a>
+      <a href="contato.html">Contato</a>
+      <a href="ajuda.html">Ajuda</a>
+    </nav>
+  </header>
+  <main>
+    <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <img src="img/telmo.jpg" alt="Foto de Telmo Bittencourt" class="perfil" style="max-width: 150px;">
+    <p>Sou Telmo Bittencourt, apaixonado por tecnologia e inovação.</p>
+    <h3>Habilidades e Competências</h3>
+    <ul>
+      <li>Organização e Planejamento</li>
+      <li>Comunicação e Trabalho em Equipe</li>
+      <li>Pensamento Analítico</li>
+      <li>Otimização de Processos Logísticos</li>
+      <li>Domínio de SAP S/4HANA WMS</li>
+      <li>Desenvolvimento Web (HTML, CSS, JavaScript)</li>
+    </ul>
+    <p>LinkedIn: <a href="http://linkedin.com/in/telmo-bittencourt-8a962b220" target="_blank">telmo-bittencourt</a></p>
+  </main>
+  <script>
+    (function () {
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light') document.documentElement.classList.add('light-mode');
+    })();
+  </script>
+</body>
+</html>

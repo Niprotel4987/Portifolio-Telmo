@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio — Telmo</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Olá, sou Telmo!</h1>
+    <nav>
+      <a href="sobre.html"><i class="fas fa-user"></i> Sobre</a>
+      <a href="curriculo.html"><i class="fas fa-file-alt"></i> Currículo</a>
+      <a href="contato.html"><i class="fas fa-envelope"></i> Contato</a>
+      <a href="ajuda.html"><i class="fas fa-question-circle"></i> Ajuda</a>
+    </nav>
+    <button id="themeToggle" type="button" aria-pressed="false">Modo Claro</button>
+  </header>
+  <main>
+   <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <img src="img/telmo.jpg" alt="Foto de Telmo Bittencourt" class="perfil" style="max-width: 150px;">
+    <p>Estudante de Tecnologia da Informação pela UFMS, atualmente no 4º semestre. Com mais de 10 anos de experiência no setor logístico e formação técnica em informática, atuo com foco em desenvolvimento web, otimização de processos e sistemas SAP/WMS.</p>
+    <ul>
+      <li>Projetos acadêmicos e profissionais</li>
+      <li>Experiência em SAP S/4HANA WMS</li>
+      <li>Formação técnica e superior em TI</li>
+    </ul>
+  </main>
+  <script>
+    (function () {
+      const btn = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('theme');
+      if (stored === 'light') document.documentElement.classList.add('light-mode');
+
+      function updateButton() {
+        const isLight = document.documentElement.classList.contains('light-mode');
+        btn.setAttribute('aria-pressed', String(isLight));
+        btn.textContent = isLight ? 'Modo Escuro' : 'Modo Claro';
+      }
+
+      btn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.documentElement.classList.contains('light-mode') ? 'light' : 'dark');
+        updateButton();
+      });
+
+      updateButton();
+    })();
+  </script>
+</body>
+</html>
